@@ -12,7 +12,7 @@ public class Caja {
 	private Unidad unidadMedida;
 	private String etiqueta;
 	
-	Caja(int ancho, int alto, int fondo, String etiqueta) {
+	Caja(int ancho, int alto, int fondo, Unidad unidadMedida,String etiqueta) {
 		setAncho(ancho);
 		setAlto(alto);
 		setFondo(fondo);
@@ -64,27 +64,12 @@ public class Caja {
 	}
 
 	public void setUnidadMedida(Unidad unidadMedida) {
-		int opcion;
-
-		do {
-			System.out.println("\n=== Menu - Unidad de Medida ===");
-			System.out.println("1.- Unidad de Medida \"CM\"");
-			System.out.println("2.- Unidad de Medida \"M\"");
-			System.out.print("Elige una opción: ");
-			opcion = sc.nextInt();
-			
-			switch (opcion) {
-					case 1 -> {
-						this.unidadMedida = Unidad.CM;
-					}
-					case 2 -> {
-						this.unidadMedida = Unidad.M;
-					}
-					default -> {
-						System.out.println("Error: el valor introducido no es correcto, vuelve a intentarlo...");
-					}
-			}
-		} while (opcion != 1 && opcion != 2);
+		if (unidadMedida == null) {
+			System.out.println("Error: la unidad de medida no es valida, inicializando a \"CM\"");
+			this.unidadMedida = Unidad.CM;
+		} else {
+			this.unidadMedida = unidadMedida;
+		}
 	}
 
 	public String getEtiqueta() {
