@@ -25,10 +25,10 @@ public class Main {
 		int opcion;
 
 		do {
-			System.out.println("=== Selección Unidad de Medida ===");
+			System.out.println("\n=== Selección Unidad de Medida ===");
 			System.out.println("1.- CM");
 			System.out.println("2.- M");
-			System.out.println("Elige una opción: ");
+			System.out.print("Elige una opción: ");
 			opcion = sc.nextInt();
 
 			switch (opcion) {
@@ -56,7 +56,7 @@ public class Main {
 			
 			switch (opcion) {
 					case 1 -> {
-						System.out.print("Introduce el ancho: ");
+						System.out.print("\nIntroduce el ancho: ");
 						int ancho = sc.nextInt();
 						
 						System.out.print("Introduce el alto: ");
@@ -66,17 +66,17 @@ public class Main {
 						int fondo = sc.nextInt();
 						
 						sc.nextLine();
-						System.out.println("Introduce etiqueta: ");
+						System.out.print("Introduce etiqueta: ");
 						String etiqueta = sc.nextLine();
 						
 						Unidad unidad = mostrarMenuUnidad();
 						
 						caja = new Caja(ancho, alto, fondo, unidad, etiqueta);
-						System.out.println("Caja creada correctamente.");
+						System.out.println("\nCaja creada correctamente.");
 					}
 					
 					case 2 -> {
-						System.out.print("Introduce el ancho: ");
+						System.out.print("\nIntroduce el ancho: ");
 						int ancho = sc.nextInt();
 						
 						System.out.print("Introduce el alto: ");
@@ -86,31 +86,33 @@ public class Main {
 						int fondo = sc.nextInt();
 						
 						sc.nextLine();
-						System.out.println("Introduce etiqueta: ");
+						System.out.print("Introduce etiqueta: ");
 						String etiqueta = sc.nextLine();
 						
 						Unidad unidad = mostrarMenuUnidad();
 						
 						cajaOptima = new CajaOptima(ancho, alto, fondo, unidad, etiqueta);
-						System.out.println("Caja Optima creada correctamente.");
+						System.out.println("\nCaja Optima creada correctamente.");
 					}
+					
 					case 3 -> {
 						if(caja == null) {
-							System.out.println("Error: no se ha creado ninguna Caja");
+							System.out.println("\nError: no se ha creado ninguna Caja");
 						} else {
-							System.out.println(caja);
+							System.out.println("\n"+caja);
 						}
 					}
 					
 					case 4 -> {
 						if (cajaOptima == null) {
-							System.out.println("Error: no se ha creado ninguna Caja Optima");
+							System.out.println("\nError: no se ha creado ninguna Caja Optima");
 						} else {
-							System.out.println(cajaOptima);
+							System.out.println("\n"+cajaOptima);
 						}
 					}
 					
 					case 5 -> {
+						System.out.println();
 						if(cajaOptima == null) {
 							System.out.println("Error: debes crear primero una caja para poder comparar");
 							break;
@@ -128,14 +130,14 @@ public class Main {
 						int fondo = sc.nextInt();
 						
 						sc.nextLine();
-						System.out.println("Introduce etiqueta: ");
+						System.out.print("Introduce etiqueta: ");
 						String etiqueta = sc.nextLine();
 						
 						Unidad unidad = mostrarMenuUnidad();
 						
 						CajaOptima otra = new CajaOptima(ancho, alto, fondo, unidad, etiqueta);
 						
-						System.out.println("Comparación equals():");
+						System.out.println("\nComparación equals():");
 						if (cajaOptima.equals(otra)) {
 							System.out.println("Las cajas óptimas SON IGUALES");
 						} else {
@@ -144,15 +146,15 @@ public class Main {
 					}
 					
 					case 6 -> {
-						System.out.println("Cartón total utilizado: "+CajaOptima.cartonTotal()+"\n");
+						System.out.println("\nCartón total utilizado: "+CajaOptima.cartonTotal()+"\n");
 					}
 					
 					case 7 -> {
-						System.out.println("Saliendo del programa...");
+						System.out.println("\nSaliendo del programa...");
 					}
 					
 					default -> {
-						System.out.println("Error: la opción no es valida");
+						System.out.println("\nError: la opción no es valida");
 					}
 			}
 			

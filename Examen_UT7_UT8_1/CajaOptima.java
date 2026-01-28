@@ -24,7 +24,7 @@ public class CajaOptima extends Caja{
 	
 	@Override
 	public String toString() {
-		return super.toString() + String.format("\nArea: %.4f\nVolumen Óptimo: %.4f\nCarton Total: %.4f", getArea(), getVolumen(),cartonTotal());
+		return super.toString() + String.format("\nArea: %.4f%s\nVolumen Óptimo: %.4f%s\nCarton Total: %.4f%s", getArea(), getUnidadMedida(),getVolumen(), getUnidadMedida(), cartonTotal(), getUnidadMedida());
 	}
 	
 	@Override
